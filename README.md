@@ -28,24 +28,11 @@ A causa de esto, se estima que:
 **Usuarios secundarios (revisión y/o autorización):**
 - Supervisor/interventor/jefe de proyecto.
 
-## 4) Flujo actual del problema (Input → Decisión → Output)
-### Input
-- Fotografías (celular, WhatsApp, Drive)
-- Actas y soportes
-- Notas de actividades (Excel/Docs/chats)
-- Plantilla/formato requerido
+## 4) Statement AI-first (Como podria Intervenir la IA)
+La IA actua como un agente estructurador dentro del flujo de documentación, interpretando evidencia no estructurada, clasificando actividades y generando borradores de texto organizados antes de la intervención humana, reduciendo carga operativa y reprocesos.
 
-### Decisión / proceso manual
-- Seleccionar fotos relevantes
-- Agrupar evidencia por actividad, fecha o frente de trabajo
-- Redactar descripciones técnicas repetitivas
-- Verificar evidencia mínima y cumplimiento de formato
-- Corregir por observaciones del revisor
 
-### Output
-- Informe final (Word/PDF)
-- Reprocesos por faltantes/inconsistencias
-- Entrega tardía en algunos casos
+
 
 ## 5) Hipótesis clave
 - H1: El mayor cuello de botella es organizar evidencia fotográfica por actividad.

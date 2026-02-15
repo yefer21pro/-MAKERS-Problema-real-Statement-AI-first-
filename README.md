@@ -33,15 +33,3 @@ La IA actua como un agente estructurador dentro del flujo de documentación, int
 
 
 
-
-## 5) Hipótesis clave
-- H1: El mayor cuello de botella es organizar evidencia fotográfica por actividad.
-- H2: La redacción de descripciones consume tiempo por ser repetitiva.
-- H3: La evidencia dispersa aumenta omisiones y reprocesos.
-- H4: Empresas pequeñas/medianas sufren más por no tener roles dedicados a documentación.
-
-## 6) Statement AI-first (rol potencial de la IA)
-La IA podría actuar como un **agente documental** que interprete evidencia no estructurada (imágenes y notas) y asista en la **organización por actividades** y la **construcción de narrativa técnica coherente** alineada a estándares de informe, antes de la consolidación final humana.
-
-## 7) Diagrama del flujo
-El diagrama del flujo actual se subirá en la carpeta `/diagrams` (export desde Miro).

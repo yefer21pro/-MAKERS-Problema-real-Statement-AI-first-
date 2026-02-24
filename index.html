@@ -1,145 +1,330 @@
-"use client";
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MAKERS — Entregables</title>
 
-import { useState } from "react";
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-export default function Home() {
-  const [tab, setTab] = useState<"semana1" | "semana2">("semana1");
+  <!-- (Opcional) fuente más bonita -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  const btn = (active: boolean): React.CSSProperties => ({
-    padding: "10px 14px",
-    borderRadius: 10,
-    border: "1px solid #ddd",
-    cursor: "pointer",
-    background: active ? "#111" : "#fff",
-    color: active ? "#fff" : "#111",
-    fontWeight: 600,
-  });
+  <style>
+    html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  </style>
+</head>
 
-  return (
-    <main style={{ maxWidth: 980, margin: "0 auto", padding: "48px 18px", fontFamily: "system-ui" }}>
-      <h1 style={{ fontSize: 34, margin: 0 }}>MAKERS — Entregables</h1>
-      <p style={{ color: "#444", marginTop: 10 }}>Selecciona una semana para ver el contenido.</p>
+<body class="bg-slate-50 text-slate-900">
+  <main class="max-w-5xl mx-auto px-4 py-10">
 
-      <div style={{ display: "flex", gap: 10, marginTop: 18, flexWrap: "wrap" }}>
-        <button style={btn(tab === "semana1")} onClick={() => setTab("semana1")}>
+    <!-- Header -->
+    <header class="mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">MAKERS — Entregables</h1>
+      <p class="text-slate-600 mt-2">Selecciona una semana para ver el contenido.</p>
+
+      <!-- Tabs -->
+      <div class="mt-5 flex flex-wrap gap-2">
+        <button id="btnSemana1"
+          class="px-4 py-2 rounded-xl border border-slate-200 bg-slate-900 text-white font-semibold shadow-sm hover:opacity-95 transition">
           Semana 1
         </button>
-        <button style={btn(tab === "semana2")} onClick={() => setTab("semana2")}>
+        <button id="btnSemana2"
+          class="px-4 py-2 rounded-xl border border-slate-200 bg-white text-slate-900 font-semibold shadow-sm hover:bg-slate-50 transition">
           Semana 2
         </button>
       </div>
+    </header>
 
-      <div style={{ marginTop: 18 }}>{tab === "semana1" ? <Semana1Content /> : <Semana2Content />}</div>
-    </main>
-  );
-}
-
-function Card({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section style={{ border: "1px solid #e6e6e6", borderRadius: 14, padding: 18, marginTop: 14 }}>
-      <h2 style={{ marginTop: 0 }}>{title}</h2>
-      <div>{children}</div>
-    </section>
-  );
-}
-
-function Semana1Content() {
-  const muted: React.CSSProperties = { color: "#666", fontSize: 14 };
-  const tag: React.CSSProperties = {
-    display: "inline-block",
-    padding: "4px 10px",
-    border: "1px solid #e6e6e6",
-    borderRadius: 999,
-    fontSize: 12,
-    color: "#444",
-    marginRight: 6,
-  };
-
-  return (
-    <>
-      <Card title="MAKERS SEMANA 1 — Problema real + Statement AI-first">
-        <div style={{ marginBottom: 10 }}>
-          <span style={tag}>Lesson 8</span>
-          <span style={tag}>Problema real</span>
-          <span style={tag}>Flujo</span>
-          <span style={tag}>Statement AI-first</span>
+    <!-- SEMANA 1 -->
+    <section id="semana1" class="space-y-4">
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slate-700">Lesson 8</span>
+          <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slate-700">Problema real</span>
+          <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slate-700">Flujo</span>
+          <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slate-700">Statement AI-first</span>
         </div>
 
-        <h3 style={{ marginTop: 10 }}>1) Definición del problema</h3>
-        <p>
-          Se estima que la elaboración de informes corporativos de ejecución y cumplimiento (especialmente en contratos
-          con entidades públicas) puede requerir varias horas de trabajo manual por cada entrega periódica, generando un
-          sobrecosto operativo y afectando la eficiencia del equipo.
+        <h2 class="text-xl font-bold">1) Definición del problema</h2>
+        <p class="text-slate-700 mt-2">
+          Se estima que la elaboración de informes corporativos de ejecución y cumplimiento (especialmente en contratos con entidades públicas)
+          puede requerir varias horas de trabajo manual por cada entrega periódica, generando un sobrecosto operativo y afectando la eficiencia del equipo.
         </p>
 
-        <h3>2) Contexto (hipótesis)</h3>
-        <p>
-          Este problema puede ocurrir con alta frecuencia en contratos entre entidades públicas y contratistas privados,
-          así como en relaciones entre empresas privadas, donde se exige la presentación periódica de informes acompañados
-          de evidencia técnica y fotográfica, según las obligaciones acordadas entre ambas partes.
+        <h2 class="text-xl font-bold mt-6">2) Contexto (hipótesis)</h2>
+        <p class="text-slate-700 mt-2">
+          Este problema puede ocurrir con alta frecuencia en contratos entre entidades públicas y contratistas privados, así como en relaciones entre empresas privadas,
+          donde se exige la presentación periódica de informes acompañados de evidencia técnica y fotográfica, según las obligaciones acordadas entre ambas partes.
         </p>
 
-        <p style={muted}>Contexto:</p>
-        <ul>
+        <p class="text-slate-500 text-sm mt-4">Contexto:</p>
+        <ul class="list-disc pl-6 text-slate-700 mt-2 space-y-1">
           <li>Empresas privadas ejecutan contratos que requieren informes periódicos (semanales, quincenales, mensuales o por servicio prestado).</li>
           <li>Se exige evidencia fotográfica por actividad (antes, durante y después, o evidencia de ejecución).</li>
           <li>Existen plantillas o formatos definidos por el cliente, el contrato o la interventoría.</li>
         </ul>
 
-        <p style={muted}>A causa de esto, se estima que:</p>
-        <ul>
+        <p class="text-slate-500 text-sm mt-4">A causa de esto, se estima que:</p>
+        <ul class="list-disc pl-6 text-slate-700 mt-2 space-y-1">
           <li>El tiempo de redacción y organización de la información es elevado.</li>
           <li>Representa un costo adicional dentro del proceso operativo.</li>
           <li>La información puede quedar distribuida de forma dispersa entre WhatsApp, Drive/carpetas, Excel y Word/Docs.</li>
           <li>Existen fallos y omisiones dentro del proceso de consolidación del informe.</li>
         </ul>
 
-        <h3>3) Usuarios (hipótesis)</h3>
-        <p style={muted}>Usuario primario:</p>
-        <ul>
+        <h2 class="text-xl font-bold mt-6">3) Usuarios (hipótesis)</h2>
+        <p class="text-slate-500 text-sm mt-2">Usuario primario:</p>
+        <ul class="list-disc pl-6 text-slate-700 mt-2 space-y-1">
           <li>El usuario primario será un residente, coordinador de proyecto o auxiliar administrativo.</li>
           <li>Profesional o colaborador responsable de consolidar la información y elaborar los informes periódicos con base en las actividades ejecutadas.</li>
         </ul>
-        <p>
-          <b>Usuarios secundarios:</b> Supervisor/interventor/jefe de proyecto.
+        <p class="text-slate-700 mt-2"><b>Usuarios secundarios:</b> Supervisor/interventor/jefe de proyecto.</p>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+        <h2 class="text-xl font-bold">4) Flujo actual del proceso</h2>
+        <p class="text-slate-500 text-sm mt-2">Diagrama:</p>
+        <img src="diagrams/Flow Entregable 1.jpg" alt="Flujo actual del proceso"
+          class="mt-4 w-full rounded-2xl border border-slate-200" />
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+        <h2 class="text-xl font-bold">5) Statement AI-first</h2>
+        <p class="text-slate-700 mt-2">
+          La IA actúa como un <b>agente documental</b> que interpreta evidencia no estructurada (imágenes, notas y actas) y asiste en la
+          <b>organización por actividades</b> y la <b>construcción de narrativa técnica coherente</b>, antes de la revisión del consolidado final por parte de la intervención humana.
         </p>
-      </Card>
+      </div>
 
-      <Card title="4) Flujo actual del proceso">
-        <p style={muted}>Diagrama:</p>
-        <img
-          src="/diagrams/Flow Entregable 1.jpg"
-          alt="Flujo actual del proceso"
-          style={{ width: "100%", height: "auto", border: "1px solid #e6e6e6", borderRadius: 14 }}
-        />
-      </Card>
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+        <h2 class="text-xl font-bold">6) Flujo Statement AI-first</h2>
+        <p class="text-slate-500 text-sm mt-2">Diagrama:</p>
+        <img src="diagrams/Flow Entregable 1.1.jpg" alt="Flujo AI-first del proceso"
+          class="mt-4 w-full rounded-2xl border border-slate-200" />
+      </div>
+    </section>
 
-      <Card title="5) Statement AI-first">
-        <p>
-          La IA actúa como un <b>agente documental</b> que interpreta evidencia no estructurada (imágenes, notas y actas) y asiste
-          en la <b>organización por actividades</b> y la <b>construcción de narrativa técnica coherente</b>, antes de la revisión del
-          consolidado final por parte de la intervención humana.
+    <!-- SEMANA 2 -->
+    <section id="semana2" class="space-y-4 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slate-700">Lesson 9</span>
+          <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slate-700">Problema validado</span>
+          <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slate-700">Usuario claro</span>
+          <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slate-700">Evidencia</span>
+        </div>
+
+        <h2 class="text-xl font-bold">1) Problema validado (v1)</h2>
+        <p class="text-slate-700 mt-2">
+          La elaboración de informes de ejecución y cumplimiento con evidencia fotográfica presenta alta carga manual, principalmente por la
+          <b> redacción técnica/transcripción de actividades</b> y la <b>organización/etiquetado de evidencias</b>, generando sobrecosto de tiempo,
+          estrés operativo y observaciones/devoluciones.
         </p>
-      </Card>
 
-      <Card title="6) Flujo Statement AI-first">
-        <p style={muted}>Diagrama:</p>
-        <img
-          src="/diagrams/Flow Entregable 1.1.jpg"
-          alt="Flujo AI-first del proceso"
-          style={{ width: "100%", height: "auto", border: "1px solid #e6e6e6", borderRadius: 14 }}
-        />
-      </Card>
-    </>
-  );
-}
+        <h2 class="text-xl font-bold mt-6">2) Usuario objetivo (v1)</h2>
+        <p class="text-slate-700 mt-2">
+          <b>Usuario principal:</b> Auxiliar administrativo / analista de informes en contratista (público/privado) responsable de consolidar evidencias y redactar informes periódicos (Word/PDF) según plantilla.
+        </p>
+        <p class="text-slate-700 mt-2">
+          <b>Usuarios secundarios:</b> Residente/técnico de campo (captura evidencia) e interventor/supervisor (revisión y observaciones).
+        </p>
+      </div>
 
-function Semana2Content() {
-  return (
-    <>
-      <Card title="MAKERS SEMANA 2 — Problema validado + Usuario claro">
-        <p>Pega aquí tu contenido de la semana 2…</p>
-      </Card>
-    </>
-  );
-}
+      <!-- Evidencia -->
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+        <h2 class="text-xl font-bold">3) Evidencia de validación</h2>
+
+        <div class="mt-4 grid sm:grid-cols-2 gap-3">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="text-sm text-slate-500">Encuesta</p>
+            <p class="text-2xl font-bold">n = 6</p>
+            <p class="text-slate-700 mt-1"><b>67%</b> tarda 3h+ por informe</p>
+            <p class="text-slate-700"><b>100%</b> usaría herramienta (ahorra 30–50%)</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="text-sm text-slate-500">Entrevistas</p>
+            <p class="text-2xl font-bold">n = 2</p>
+            <p class="text-slate-700 mt-1">Casos de <b>4 horas</b> y <b>36 horas</b> por informe</p>
+            <p class="text-slate-700">Frecuencia: quincenal–mensual</p>
+          </div>
+        </div>
+
+        <h3 class="font-semibold mt-6">Resumen encuesta (n=6)</h3>
+        <div class="overflow-x-auto mt-3">
+          <table class="min-w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-slate-100">
+              <tr>
+                <th class="text-left px-3 py-2 border-b">Variable</th>
+                <th class="text-left px-3 py-2 border-b">Opción</th>
+                <th class="text-right px-3 py-2 border-b">n</th>
+                <th class="text-right px-3 py-2 border-b">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="px-3 py-2 border-b">Rol</td><td class="px-3 py-2 border-b">Auxiliar administrativo</td><td class="px-3 py-2 border-b text-right">3</td><td class="px-3 py-2 border-b text-right">50%</td></tr>
+              <tr><td class="px-3 py-2 border-b">Rol</td><td class="px-3 py-2 border-b">Residente/Técnico de campo</td><td class="px-3 py-2 border-b text-right">2</td><td class="px-3 py-2 border-b text-right">33%</td></tr>
+              <tr><td class="px-3 py-2 border-b">Rol</td><td class="px-3 py-2 border-b">Interventor/supervisor</td><td class="px-3 py-2 border-b text-right">1</td><td class="px-3 py-2 border-b text-right">17%</td></tr>
+
+              <tr><td class="px-3 py-2 border-b">Tipo organización</td><td class="px-3 py-2 border-b">Entidad pública</td><td class="px-3 py-2 border-b text-right">4</td><td class="px-3 py-2 border-b text-right">67%</td></tr>
+              <tr><td class="px-3 py-2 border-b">Tipo organización</td><td class="px-3 py-2 border-b">Empresa privada</td><td class="px-3 py-2 border-b text-right">2</td><td class="px-3 py-2 border-b text-right">33%</td></tr>
+
+              <tr><td class="px-3 py-2 border-b">Frecuencia</td><td class="px-3 py-2 border-b">Por avance / por hito</td><td class="px-3 py-2 border-b text-right">3</td><td class="px-3 py-2 border-b text-right">50%</td></tr>
+              <tr><td class="px-3 py-2 border-b">Frecuencia</td><td class="px-3 py-2 border-b">Semanal</td><td class="px-3 py-2 border-b text-right">2</td><td class="px-3 py-2 border-b text-right">33%</td></tr>
+              <tr><td class="px-3 py-2 border-b">Frecuencia</td><td class="px-3 py-2 border-b">Mensual</td><td class="px-3 py-2 border-b text-right">1</td><td class="px-3 py-2 border-b text-right">17%</td></tr>
+
+              <tr><td class="px-3 py-2 border-b">Tiempo por informe</td><td class="px-3 py-2 border-b">3–6 horas</td><td class="px-3 py-2 border-b text-right">3</td><td class="px-3 py-2 border-b text-right">50%</td></tr>
+              <tr><td class="px-3 py-2 border-b">Tiempo por informe</td><td class="px-3 py-2 border-b">1–3 horas</td><td class="px-3 py-2 border-b text-right">2</td><td class="px-3 py-2 border-b text-right">33%</td></tr>
+              <tr><td class="px-3 py-2">Tiempo por informe</td><td class="px-3 py-2">10+ horas</td><td class="px-3 py-2 text-right">1</td><td class="px-3 py-2 text-right">17%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-semibold mt-6">Entrevistas (n=2)</h3>
+
+        <div class="mt-3 grid gap-3">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="font-semibold">Andrés Felipe Forero — AFG Ingeniería</p>
+            <p class="text-slate-700 mt-1"><b>Rol:</b> Contratista privado</p>
+            <p class="text-slate-700"><b>Frecuencia:</b> 15 días</p>
+            <p class="text-slate-700"><b>Horas por informe:</b> 4 horas</p>
+            <p class="text-slate-700"><b>Dolor #1:</b> Redacción técnica</p>
+            <p class="text-slate-700"><b>Consecuencia:</b> Más tiempo (sobrecosto)</p>
+            <p class="italic text-slate-600 mt-2">“Tiempo es dinero.”</p>
+            <p class="text-slate-700 mt-1"><b>¿Probaría piloto?</b> Sí</p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="font-semibold">Raúl Iván Mera — Parques Infantiles Raúl Iván Mera</p>
+            <p class="text-slate-700 mt-1"><b>Rol:</b> Contratista para entidades públicas</p>
+            <p class="text-slate-700"><b>Frecuencia:</b> 15 días – 1 mes</p>
+            <p class="text-slate-700"><b>Horas por informe:</b> 36 horas</p>
+            <p class="text-slate-700"><b>Dolor #1:</b> Organización de evidencia fotográfica</p>
+            <p class="text-slate-700"><b>Consecuencia:</b> Observaciones/devoluciones</p>
+            <p class="italic text-slate-600 mt-2">“No es la dificultad, es el tiempo que toma realizar el informe.”</p>
+            <p class="text-slate-700 mt-1"><b>¿Probaría piloto?</b> Sí</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prompts -->
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+        <h2 class="text-xl font-bold">4) Prompts simples para testear hipótesis AI-light</h2>
+
+        <div class="mt-4 space-y-3">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="font-semibold">Prompt 1 — Organización de evidencias (H1)</p>
+            <pre class="mt-2 text-sm whitespace-pre-wrap text-slate-800">
+Actúa como asistente documental.
+Con la siguiente lista de evidencias y notas, organízalas por actividad y clasifícalas como antes/durante/después.
+Entrega:
+1) Tabla: Actividad | Evidencia (ID) | Tipo | Descripción | Observación
+2) Nombres estándar: AAAAMMDD_Actividad_Tipo_#
+3) Lista de faltantes por actividad.
+No inventes datos; si falta info, marca [Dato pendiente].
+            </pre>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="font-semibold">Prompt 2 — Borrador técnico (H2)</p>
+            <pre class="mt-2 text-sm whitespace-pre-wrap text-slate-800">
+Con actividades, notas y la tabla de evidencias, redacta un borrador de informe técnico (1–2 páginas) con:
+Objetivo, Periodo, Actividades ejecutadas, Evidencias (por ID), Hallazgos, Recomendaciones, Anexos.
+Tono formal. No inventes.
+            </pre>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="font-semibold">Prompt 3 — QA tipo interventoría (H3)</p>
+            <pre class="mt-2 text-sm whitespace-pre-wrap text-slate-800">
+Actúa como interventoría. Revisa el borrador y las evidencias.
+Señala faltantes, inconsistencias y puntos débiles.
+Clasifica: Crítico / Importante / Menor y sugiere correcciones.
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aprendizajes -->
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+        <h2 class="text-xl font-bold">5) Aprendizajes y decisiones</h2>
+
+        <div class="overflow-x-auto mt-3">
+          <table class="min-w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+            <thead class="bg-slate-100">
+              <tr>
+                <th class="text-left px-3 py-2 border-b">Hallazgo</th>
+                <th class="text-left px-3 py-2 border-b">Evidencia</th>
+                <th class="text-left px-3 py-2 border-b">Decisión</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-3 py-2 border-b">Dolor #1: redacción/transcripción</td>
+                <td class="px-3 py-2 border-b">Encuesta: 83% (5 menciones)</td>
+                <td class="px-3 py-2 border-b">Priorizar borrador técnico</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 border-b">Dolor #2: organización/etiquetado de fotos</td>
+                <td class="px-3 py-2 border-b">Encuesta: 50% + entrevista Raúl</td>
+                <td class="px-3 py-2 border-b">Priorizar etiquetado + tabla evidencias</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 border-b">Riesgo de devoluciones/observaciones</td>
+                <td class="px-3 py-2 border-b">Entrevista Raúl</td>
+                <td class="px-3 py-2 border-b">Agregar QA de faltantes antes de exportar</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 border-b">El problema es el tiempo total</td>
+                <td class="px-3 py-2 border-b">Cita: “No es la dificultad…” + rango 4h–36h</td>
+                <td class="px-3 py-2 border-b">KPI: ahorrar 30–50% del tiempo</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2">Alta disposición a probar</td>
+                <td class="px-3 py-2">Encuesta 100% + 2/2 entrevistas</td>
+                <td class="px-3 py-2">Reclutar piloto con usuarios reales</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-10 text-sm text-slate-500">
+      Actualizado: Semana 1 + Semana 2 • Vercel Static Deploy
+    </footer>
+  </main>
+
+  <script>
+    const btn1 = document.getElementById("btnSemana1");
+    const btn2 = document.getElementById("btnSemana2");
+    const s1 = document.getElementById("semana1");
+    const s2 = document.getElementById("semana2");
+
+    function show(which){
+      const is1 = which === "1";
+      s1.classList.toggle("hidden", !is1);
+      s2.classList.toggle("hidden", is1);
+
+      btn1.classList.toggle("active", is1);
+      btn2.classList.toggle("active", !is1);
+
+      btn1.classList.toggle("bg-slate-900", is1);
+      btn1.classList.toggle("text-white", is1);
+      btn1.classList.toggle("bg-white", !is1);
+      btn1.classList.toggle("text-slate-900", !is1);
+
+      btn2.classList.toggle("bg-slate-900", !is1);
+      btn2.classList.toggle("text-white", !is1);
+      btn2.classList.toggle("bg-white", is1);
+      btn2.classList.toggle("text-slate-900", is1);
+    }
+
+    btn1.addEventListener("click", () => show("1"));
+    btn2.addEventListener("click", () => show("2"));
+  </script>
+</body>
+</html>

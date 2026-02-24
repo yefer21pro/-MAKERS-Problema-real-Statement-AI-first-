@@ -52,89 +52,113 @@ function Semana1Content() {
     <>
       <Card title="MAKERS SEMANA 1 — Problema real + Statement AI-first">
         <p>
-          <!doctype html>
-          <html lang="es">
-          <head>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>SEMANA 1 — Problema real + Statement AI-first</title>
-            <style>
-              body { font-family: system-ui, Arial, sans-serif; max-width: 980px; margin: 40px auto; padding: 0 16px; line-height: 1.55; }
-              h1 { margin-bottom: 8px; }
-              .meta { color:#666; margin-top: 0; }
-              .card { border: 1px solid #e6e6e6; border-radius: 16px; padding: 18px; margin: 18px 0; }
-              ul { margin-top: 8px; }
-              img { width: 100%; height: auto; border: 1px solid #e6e6e6; border-radius: 16px; }
-              .muted { color:#666; font-size: 14px; }
-              .tag { display:inline-block; padding: 4px 10px; border:1px solid #e6e6e6; border-radius: 999px; font-size: 12px; color:#444; margin-right: 6px; }
-              hr { border: none; border-top: 1px solid #eee; margin: 18px 0; }
-            </style>
-          </head>
-          <body>
-            <h1>MAKERS SEMANA 1 — Problema real + Statement AI-first</h1>
-            <p class="meta">Reto Producto (Lesson 8) • Deliverable: problema real + flujo + statement AI-first</p>
-            <div class="card">
-              <h2>1) Definición del problema</h2>
-              <p>
-                Se estima que la elaboración de informes corporativos de ejecución y cumplimiento (especialmente en contratos con entidades públicas) puede requerir varias 
-                horas de trabajo manual por cada entrega periódica, generando un sobrecosto operativo y afectando la eficiencia del equipo.
-              </p>
-          
-              <h2>2) Contexto (hipótesis)</h2>
-              <p>
-                Este problema puede ocurrir con alta frecuencia en contratos entre entidades públicas y contratistas privados, así como en relaciones entre empresas privadas, 
-                donde se exige la presentación periódica de informes acompañados de evidencia técnica y fotográfica, según las obligaciones acordadas entre ambas partes.
-              </p>
-               <p class="muted">
-                Contexto:
-              </p>
-              <ul>
-                <li>Empresas privadas ejecutan contratos que requieren informes periódicos (semanales, quincenales, mensuales o por servicio prestado).</li>
-                <li>Se exige evidencia fotográfica por actividad (antes, durante y después, o evidencia de ejecución).</li>
-                <li>Existen plantillas o formatos definidos por el cliente, el contrato o la interventoría.</li>
-              </ul>
-              <p class="muted">
-                A causa de esto, se estima que:
-              </p>
-              <ul>
-                <li>El tiempo de redacción y organización de la información es elevado.</li>
-                <li>Representa un costo adicional dentro del proceso operativo.</li>
-                <li>La información puede quedar distribuida de forma dispersa entre WhatsApp, Drive/carpetas, Excel y Word/Docs.</li>
-                <li>Existen fallos y omisiones dentro del proceso de consolidación del informe.</li>
-               </ul>
-              <h2>3) Usuarios (hipótesis)</h2>
-              <p class="muted">
-                Usuario Primario:
-              </p>
-              <ul>
-                <li>El usuario primario sera un residente, coordinador de proyecto o auxiliar administrativo.</li>
-                <li>Profesional o colaborador responsable de consolidar la información y elaborar los informes periódicos con base en las actividades ejecutadas.</li>
-              </ul>
-              <p><b>Usuarios secundarios:</b> Supervisor/interventor/jefe de proyecto.</p>
-            </div>
-          
-            <div class="card">
-              <h2>4) Flujo actual del proceso</h2>
-              <p class="muted">Diagrama:</p>
-              <img src="diagrams/Flow Entregable 1.jpg" alt="Flujo actual del proceso" />
-            </div>
-          
-            <div class="card">
-              <h2>5) Statement AI-first</h2>
-              <p>
-                La IA actua como un <b>agente documental</b> que interpreta evidencia no estructurada (imágenes, notas y actas) y asiste en la
-                <b>organización por actividades</b> y la <b>construcción de narrativa técnica coherente</b>, antes de la revision del consolidado final por parte de la intervención humana.
-              </p>
-              <div class="card">
-              <h2>Flujo Statement AI-First</h2>
-              <p class="muted">Diagrama:</p>
-              <img src="diagrams/Flow Entregable 1.1.jpg" alt="Flujo AI-FIRST del proceso" />
-              
-              <hr />
-            </div>
-          
-          </body>
-          </html>
+          function Semana1Content() {
+          const muted: React.CSSProperties = { color: "#666", fontSize: 14 };
+          const tag: React.CSSProperties = {
+            display: "inline-block",
+            padding: "4px 10px",
+            border: "1px solid #e6e6e6",
+            borderRadius: 999,
+            fontSize: 12,
+            color: "#444",
+            marginRight: 6,
+          };
+        
+          return (
+            <>
+              <Card title="MAKERS SEMANA 1 — Problema real + Statement AI-first">
+                <div style={{ marginBottom: 10 }}>
+                  <span style={tag}>Lesson 8</span>
+                  <span style={tag}>Problema real</span>
+                  <span style={tag}>Flujo</span>
+                  <span style={tag}>Statement AI-first</span>
+                </div>
+        
+                <h3 style={{ marginTop: 10 }}>1) Definición del problema</h3>
+                <p>
+                  Se estima que la elaboración de informes corporativos de ejecución y cumplimiento
+                  (especialmente en contratos con entidades públicas) puede requerir varias horas de
+                  trabajo manual por cada entrega periódica, generando un sobrecosto operativo y
+                  afectando la eficiencia del equipo.
+                </p>
+        
+                <h3>2) Contexto (hipótesis)</h3>
+                <p>
+                  Este problema puede ocurrir con alta frecuencia en contratos entre entidades públicas
+                  y contratistas privados, así como en relaciones entre empresas privadas, donde se
+                  exige la presentación periódica de informes acompañados de evidencia técnica y
+                  fotográfica, según las obligaciones acordadas entre ambas partes.
+                </p>
+        
+                <p style={muted}>Contexto:</p>
+                <ul>
+                  <li>
+                    Empresas privadas ejecutan contratos que requieren informes periódicos (semanales,
+                    quincenales, mensuales o por servicio prestado).
+                  </li>
+                  <li>
+                    Se exige evidencia fotográfica por actividad (antes, durante y después, o evidencia
+                    de ejecución).
+                  </li>
+                  <li>
+                    Existen plantillas o formatos definidos por el cliente, el contrato o la interventoría.
+                  </li>
+                </ul>
+        
+                <p style={muted}>A causa de esto, se estima que:</p>
+                <ul>
+                  <li>El tiempo de redacción y organización de la información es elevado.</li>
+                  <li>Representa un costo adicional dentro del proceso operativo.</li>
+                  <li>
+                    La información puede quedar distribuida de forma dispersa entre WhatsApp, Drive/carpetas,
+                    Excel y Word/Docs.
+                  </li>
+                  <li>Existen fallos y omisiones dentro del proceso de consolidación del informe.</li>
+                </ul>
+        
+                <h3>3) Usuarios (hipótesis)</h3>
+                <p style={muted}>Usuario primario:</p>
+                <ul>
+                  <li>El usuario primario será un residente, coordinador de proyecto o auxiliar administrativo.</li>
+                  <li>
+                    Profesional o colaborador responsable de consolidar la información y elaborar los informes
+                    periódicos con base en las actividades ejecutadas.
+                  </li>
+                </ul>
+                <p>
+                  <b>Usuarios secundarios:</b> Supervisor/interventor/jefe de proyecto.
+                </p>
+              </Card>
+        
+              <Card title="4) Flujo actual del proceso">
+                <p style={{ color: "#666", fontSize: 14, marginTop: 0 }}>Diagrama:</p>
+                <img
+                  src="/diagrams/Flow Entregable 1.jpg"
+                  alt="Flujo actual del proceso"
+                  style={{ width: "100%", height: "auto", border: "1px solid #e6e6e6", borderRadius: 14 }}
+                />
+              </Card>
+        
+              <Card title="5) Statement AI-first">
+                <p>
+                  La IA actúa como un <b>agente documental</b> que interpreta evidencia no estructurada
+                  (imágenes, notas y actas) y asiste en la <b>organización por actividades</b> y la{" "}
+                  <b>construcción de narrativa técnica coherente</b>, antes de la revisión del consolidado
+                  final por parte de la intervención humana.
+                </p>
+              </Card>
+        
+              <Card title="6) Flujo Statement AI-first">
+                <p style={{ color: "#666", fontSize: 14, marginTop: 0 }}>Diagrama:</p>
+                <img
+                  src="/diagrams/Flow Entregable 1.1.jpg"
+                  alt="Flujo AI-first del proceso"
+                  style={{ width: "100%", height: "auto", border: "1px solid #e6e6e6", borderRadius: 14 }}
+                />
+              </Card>
+            </>
+          );
+        }
         </p>
       </Card>
       {/* agrega más Cards si quieres */}

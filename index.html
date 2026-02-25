@@ -275,14 +275,64 @@ Genera el archivo PDF o Word, segun lo escogido por el usuario.
             <p class="font-semibold">Prompts</p>
             <pre class="mt-2 text-sm whitespace-pre-wrap text-slate-800">
 Pregunta 1: ¿Cuántas actividades tiene el informe en total?
-**Pregunta 1:** ¿Cuántas actividades tiene el informe en total?
-RESPUESTA USUARIO: 2 actividades
+              
+    RESPUESTA USUARIO: 2 actividades
+              
 Perfecto: 2 actividades.
 Actividad 1
 1.	¿Cómo se llama la Actividad 1? (ej: “Reparación de baño – cambio de sanitario”)
 2.	Escríbeme una nota técnica corta (2–5 bullets) de lo que se hizo.
 3.	Sube 1–3 fotos de esa actividad (si ya las tienes, me dices cuáles son “antes/durante/después” o yo lo infiero).
 
+    USUARIO INTRODUCE: Fotografias y Notas tecnicas de forma Breve de la actividad No.1.
+
+Ahora vamos con Actividad 2:
+1.	¿Cómo se llama la Actividad 2?
+2.	Dame la nota técnica cortica (2–5 bullets).
+3.	Sube 1–3 fotos.
+
+    USUARIO INTRODUCE: Fotografias y Notas tecnicas de forma Breve de la actividad No.2.
+
+Actividad 1 — Reparación fluxómetro baño 1
+A) Descripción técnica (3–6 líneas)
+  Se realizó la reparación del fluxómetro del baño 1 con el fin de restablecer el correcto funcionamiento del sistema de descarga del sanitario. Durante la intervención se efectuaron ajustes y correcciones en el punto de instalación asociado al equipo, dejando el sistema en condición operativa.
+  Fecha: [Dato pendiente] • Ubicación/Sede: [Dato pendiente] • Responsable: [Dato pendiente]
+B) Evidencia fotográfica
+  •	Foto 1 (Durante): Se evidencia el área del sanitario con intervención visible en el muro/punto de instalación asociado, así como elementos de trabajo y materiales en sitio.
+C) Evidencias faltantes (para evitar observaciones)
+  •	Foto Después donde se evidencie el sanitario/fluxómetro instalado y el área terminada.
+  •	Evidencia de prueba de funcionamiento (descarga correcta y ausencia de fugas) — puede ser foto o nota breve de verificación.
+  •	(Opcional) Foto Antes si el formato del cliente la exige.
+D) Nombre sugerido de archivo
+  •	AAAAMMDD_ReparacionFluxometro_Bano1_Durante_01.png
+
+
+              
+Actividad 2 — Reparación puerta baño 4to piso (Pendiente)
+A) Descripción técnica (3–6 líneas)
+  Se identifica como pendiente por ejecutar la reparación de la puerta del baño ubicado en el 4to piso, debido a una afectación visible en el ensamble/canto de la puerta y/o su ajuste con el marco, lo cual requiere intervención correctiva para restablecer el correcto cierre y alineación.
+  Fecha de identificación: [Dato pendiente] • Ubicación/Sede: 4to piso • Responsable asignado: [Dato pendiente]
+B) Evidencia fotográfica
+  •	Foto 1 (Estado actual / Antes): Se observa separación/desajuste en el borde de la puerta, indicando posible deterioro o desalineación que afecta el cierre.
+C) Información faltante para programar y cerrar la actividad
+  •	Diagnóstico breve de la causa: bisagras, marco, cerradura, lámina, tornillería, golpe, etc. [Dato pendiente]
+  •	Acción correctiva definida (ajuste, cambio de bisagras, reparación de marco, reemplazo parcial/total). [Dato pendiente]
+  •	Fecha programada de ejecución y responsable.
+  •	Evidencia “Durante” y “Después” + prueba de funcionamiento (cierre correcto).
+D) Nombre sugerido de archivo
+  •	AAAAMMDD_ReparacionPuerta_Bano4toPiso_Antes_01.png
+
+Ya con esto, tienes las 2 actividades listas ✅
+Si quieres, ahora te armo el resumen del informe con:
+  - Objetivo
+  - Periodo
+  - Tabla de actividades (Actividad | Estado | Evidencias | Observaciones)
+Recomendaciones / próximos pasos
+Solo dime: ¿quieres que el informe salga en formato Word/PDF tipo interventoría (formal) o más corto tipo acta?
+
+    USUARIO RESPONDE: El formato en el que solicita el borrador de informe.
+
+LLM -> Genera el formato.
             </pre>
           </div>
 
